@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* file: style.css */
 
 body, html {
@@ -58,3 +59,65 @@ a.button:hover {
 .navbar a:hover {
   color: #ffc107;
 }
+=======
+/* file: style.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #004d4d;
+  color: #fff;
+  height: 100%;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+a.button {
+  display: inline-block;
+  padding: 15px 40px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ffffffcc, #eeeeeecc);
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #333;
+  transition: 0.4s;
+}
+
+a.button:hover {
+  background: linear-gradient(135deg, #ffffff, #dddddd);
+  transform: scale(1.05);
+}
+
+.navbar {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #003838;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #ffc107;
+}
+>>>>>>> ae19f33014a5b14f73f83abee8f8f3bb7b019455

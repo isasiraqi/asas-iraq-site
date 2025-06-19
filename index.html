@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>ائتلاف الأساس العراقي</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #004d4d;
+        }
+        .container {
+            position: relative;
+            max-width: 768px;
+            margin: auto;
+        }
+        .main-image {
+            width: 100%;
+            display: block;
+        }
+        /* مناطق تفاعل أيقونات التواصل */
+        .social-icon {
+            position: absolute;
+            width: 12%;
+            aspect-ratio: 1/1;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        #facebook { top: 87%; left: 10%; }
+        #x { top: 87%; left: 28%; }
+        #instagram { top: 87%; left: 46%; }
+        #tiktok { top: 87%; left: 64%; }
+
+        /* منطقة زر السيرة الذاتية فوق الرسم الموجود في الصورة */
+        .cv-button {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 35%;
+            height: 8%;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .social-icon:hover, .cv-button:hover {
+            box-shadow: 0 0 10px 5px rgba(255,255,255,0.3);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="main image.jpeg" alt="ائتلاف الأساس العراقي" class="main-image">
+
+    <!-- منطقة تفعيل السيرة الذاتية -->
+    <a href="cv.html" class="cv-button" title="السيرة الذاتية"></a>
+
+    <!-- روابط التواصل الاجتماعي -->
+    <a id="facebook" class="social-icon" href="https://www.facebook.com/share/14G1Z7ArH2y/?mibextid=wwXIfr" target="_blank"></a>
+
+    <a id="x" class="social-icon" href="https://twitter.com" target="_blank"></a>
+
+    <a id="instagram" class="social-icon" href="https://www.instagram.com/isas.iraqi_formal_page?igsh=dnlnZWZ0ZjZ0Y2k2&utm_source=qr" target="_blank"></a>
+
+    <a id="tiktok" class="social-icon" href="https://www.tiktok.com/@iraqiisas2025?_t=ZS-8xJRhtigRmr&_r=1" target="_blank"></a>
+</div>
+
+</body>
+</html>

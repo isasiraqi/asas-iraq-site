@@ -1,104 +1,346 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>السيرة الذاتية - محسن المندلاوي</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- إضافة خط عربي أنيق -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet" />
     <style>
+        /* إعادة ضبط */
+        * {
+            box-sizing: border-box;
+        }
         body {
-            background-color: #005e5e;
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            color: #fff8e7;
-            text-align: center;
+            background: linear-gradient(135deg, #004d4d, #006666);
+            font-family: 'Noto Kufi Arabic', Arial, sans-serif;
+            color: #f7ecd4; /* لون نص فاتح مناسب */
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 20px;
         }
         .container {
+            background: linear-gradient(145deg, #0a3838, #00504f);
             max-width: 800px;
-            margin: 30px auto;
-            padding: 30px;
-            background: linear-gradient(135deg, #004d4d, #006666);
-            border-radius: 15px;
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-        }
-        img.profile {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 5px solid #d4b483; /* صحراوي أساسي */
-            box-shadow: 0 0 15px rgba(0,0,0,0.6);
-        }
-        h1 {
-            margin: 10px 0;
-            font-size: 30px;
-            color: #d4b483; /* صحراوي أساسي */
-        }
-        h3 {
-            color: #e8cba3; /* مشتق فاتح من الصحراوي */
-        }
-        p {
-            text-align: justify;
-            line-height: 1.8;
-            padding: 0 20px;
-            font-size: 18px;
-        }
-        ul {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.4),
+                inset 0 0 30px #2a7a7a;
+            padding: 40px 50px 60px 50px;
             text-align: right;
-            margin: 20px 40px;
-            font-size: 18px;
+            position: relative;
         }
+        /* صورة البروفايل */
+        img.profile {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid #d4b483;
+            box-shadow: 0 0 25px rgba(212,180,131,0.7);
+            display: block;
+            margin: 0 auto 25px auto;
+        }
+        /* الاسم */
+        h1#name {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #d4b483;
+            margin: 0 0 18px 0;
+            letter-spacing: 1.5px;
+        }
+        /* الوصف */
+        p#description {
+            font-size: 1.18rem;
+            color: #f1e5c9;
+            margin-bottom: 35px;
+            text-align: justify;
+            text-justify: inter-word;
+            line-height: 1.85;
+            font-weight: 400;
+        }
+        /* عناوين الأقسام */
+        h3 {
+            font-size: 1.55rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #d4b483;
+            border-bottom: 2px solid #bfa76f;
+            padding-bottom: 6px;
+        }
+        /* القوائم */
+        ul {
+            list-style: inside disc;
+            padding-left: 0;
+            margin: 0 0 30px 0;
+            font-size: 1.15rem;
+            color: #f7ecd4;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        /* زر العودة */
         a.button {
             display: inline-block;
-            margin-top: 30px;
-            padding: 15px 40px;
             background-color: #d4b483;
             color: #004d4d;
-            text-decoration: none;
+            padding: 14px 50px;
             border-radius: 30px;
-            font-weight: bold;
-            transition: 0.3s;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            font-weight: 700;
+            font-size: 1.25rem;
+            text-decoration: none;
+            box-shadow: 0 6px 15px rgba(212,180,131,0.6);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            user-select: none;
         }
         a.button:hover {
-            background-color: #b68f5e;
+            background-color: #bfa76f;
+            transform: scale(1.05);
+        }
+
+        /* زر تبديل اللغة */
+        #langToggle {
+            position: fixed;
+            top: 20px;
+            right: 25px;
+            background-color: #556B2F;
+            color: #f7ecd4;
+            border: none;
+            padding: 11px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            transition: background-color 0.3s ease;
+            z-index: 10000;
+            user-select: none;
+        }
+        #langToggle:hover {
+            background-color: #445822;
+        }
+
+        /* استجابة للشاشات الصغيرة */
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 25px 40px 25px;
+            }
+            img.profile {
+                width: 140px;
+                height: 140px;
+                margin-bottom: 20px;
+            }
+            h1#name {
+                font-size: 2rem;
+                margin-bottom: 14px;
+            }
+            p#description {
+                font-size: 1rem;
+                margin-bottom: 25px;
+            }
+            h3 {
+                font-size: 1.3rem;
+                margin-bottom: 12px;
+            }
+            ul {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+            a.button {
+                padding: 12px 35px;
+                font-size: 1rem;
+            }
+            #langToggle {
+                padding: 8px 18px;
+                font-size: 1rem;
+                top: 15px;
+                right: 15px;
+            }
         }
     </style>
 </head>
 <body>
+    <button id="langToggle">EN</button>
 
-<div class="container">
-    <img src="Muhsin_al-Mandalawi.jpg" alt="محسن المندلاوي" class="profile">
-    <h1>محسن علي أكبر المندلاوي</h1>
-    <p>رجل أعمال عراقي ونائب في مجلس النواب العراقي. نائب أول لرئيس مجلس النواب العراقي منذ 29 أيلول 2022، ورئيس ائتلاف الأساس العراقي. حاصل على شهادة بكالوريوس إعلام من جامعة الفراهيدي. يشغل أيضاً منصب رئيس مجلس إدارة المستشفى العالمي للجراحات التخصصية ورئيس مجلس إدارة جامعة الفراهيدي.</p>
+    <div class="container">
+        <img src="Muhsin_al-Mandalawi.jpg" alt="محسن المندلاوي" class="profile" />
+        <h1 id="name">محسن علي أكبر المندلاوي</h1>
+        <p id="description">
+            رجل أعمال عراقي ونائب في مجلس النواب العراقي. نائب أول لرئيس مجلس النواب العراقي منذ 29 أيلول 2022، ورئيس ائتلاف الأساس العراقي. حاصل على شهادة بكالوريوس إعلام من جامعة الفراهيدي. يشغل أيضاً منصب رئيس مجلس إدارة المستشفى العالمي للجراحات التخصصية ورئيس مجلس إدارة جامعة الفراهيدي.
+        </p>
 
-    <h3>المؤهل العلمي:</h3>
-    <ul><li>بكالوريوس إعلام - جامعة الفراهيدي</li></ul>
+        <h3 id="edu-title">المؤهل العلمي:</h3>
+        <ul id="edu-list">
+            <li>بكالوريوس إعلام - جامعة الفراهيدي</li>
+        </ul>
 
-    <h3>الخبرات العملية:</h3>
-    <ul>
-        <li>رئيس مجلس إدارة المستشفى العالمي للجراحات التخصصية</li>
-        <li>رئيس مجلس إدارة جامعة الفراهيدي</li>
-        <li>عضو مجلس النواب العراقي</li>
-        <li>نائب أول لرئيس مجلس النواب العراقي</li>
-    </ul>
+        <h3 id="exp-title">الخبرات العملية:</h3>
+        <ul id="exp-list">
+            <li>رئيس مجلس إدارة المستشفى العالمي للجراحات التخصصية</li>
+            <li>رئيس مجلس إدارة جامعة الفراهيدي</li>
+            <li>عضو مجلس النواب العراقي</li>
+            <li>نائب أول لرئيس مجلس النواب العراقي</li>
+        </ul>
 
-    <h3>الإنجازات:</h3>
-    <ul>
-        <li>تأسيس ائتلاف الأساس العراقي</li>
-        <li>المساهمة في تطوير التعليم والصحة في العراق</li>
-    </ul>
+        <h3 id="ach-title">الإنجازات:</h3>
+        <ul id="ach-list">
+            <li>تأسيس ائتلاف الأساس العراقي</li>
+            <li>المساهمة في تطوير التعليم والصحة في العراق</li>
+        </ul>
 
-    <h3>المهارات:</h3>
-    <ul>
-        <li>إدارة المشاريع</li>
-        <li>القيادة السياسية</li>
-        <li>التفاوض وصنع القرار</li>
-    </ul>
+        <h3 id="skills-title">المهارات:</h3>
+        <ul id="skills-list">
+            <li>إدارة المشاريع</li>
+            <li>القيادة السياسية</li>
+            <li>التفاوض وصنع القرار</li>
+        </ul>
 
-    <a href="index.html" class="button">العودة للرئيسية</a>
-</div>
+        <a href="index.html" class="button" id="back-btn">العودة للرئيسية</a>
+    </div>
 
+    <script>
+        const btn = document.getElementById('langToggle');
+
+        const content = {
+            ar: {
+                langBtn: 'EN',
+                name: 'محسن علي أكبر المندلاوي',
+                description: 'رجل أعمال عراقي ونائب في مجلس النواب العراقي. نائب أول لرئيس مجلس النواب العراقي منذ 29 أيلول 2022، ورئيس ائتلاف الأساس العراقي. حاصل على شهادة بكالوريوس إعلام من جامعة الفراهيدي. يشغل أيضاً منصب رئيس مجلس إدارة المستشفى العالمي للجراحات التخصصية ورئيس مجلس إدارة جامعة الفراهيدي.',
+                eduTitle: 'المؤهل العلمي:',
+                eduList: ['بكالوريوس إعلام - جامعة الفراهيدي'],
+                expTitle: 'الخبرات العملية:',
+                expList: [
+                    'رئيس مجلس إدارة المستشفى العالمي للجراحات التخصصية',
+                    'رئيس مجلس إدارة جامعة الفراهيدي',
+                    'عضو مجلس النواب العراقي',
+                    'نائب أول لرئيس مجلس النواب العراقي'
+                ],
+                achTitle: 'الإنجازات:',
+                achList: [
+                    'تأسيس ائتلاف الأساس العراقي',
+                    'المساهمة في تطوير التعليم والصحة في العراق'
+                ],
+                skillsTitle: 'المهارات:',
+                skillsList: [
+                    'إدارة المشاريع',
+                    'القيادة السياسية',
+                    'التفاوض وصنع القرار'
+                ],
+                backBtn: 'العودة للرئيسية'
+            },
+            en: {
+                langBtn: 'AR',
+                name: 'Mohsin Ali Akbar Al-Mandalawi',
+                description: 'Iraqi businessman and member of the Iraqi Parliament. First Deputy Speaker of the Iraqi Parliament since September 29, 2022, and Chairman of the Iraqi Al-Asas Coalition. Holds a Bachelor\'s degree in Media from Al-Farahidi University. Also serves as Chairman of the Board of Directors of the International Specialized Surgery Hospital and Chairman of the Board of Directors of Al-Farahidi University.',
+                eduTitle: 'Education:',
+                eduList: ['Bachelor of Media - Al-Farahidi University'],
+                expTitle: 'Work Experience:',
+                expList: [
+                    'Chairman of the Board of Directors of the International Specialized Surgery Hospital',
+                    'Chairman of the Board of Directors of Al-Farahidi University',
+                    'Member of the Iraqi Parliament',
+                    'First Deputy Speaker of the Iraqi Parliament'
+                ],
+                achTitle: 'Achievements:',
+                achList: [
+                    'Founded the Iraqi Al-Asas Coalition',
+                    'Contributed to the development of education and health in Iraq'
+                ],
+                skillsTitle: 'Skills:',
+                skillsList: [
+                    'Project Management',
+                    'Political Leadership',
+                    'Negotiation and Decision Making'
+                ],
+                backBtn: 'Back to Home'
+            }
+        };
+
+        function updateContent(lang) {
+            document.documentElement.lang = lang;
+            if(lang === 'ar') {
+                document.documentElement.dir = 'rtl';
+
+                document.querySelector('.container').style.textAlign = 'right';
+                document.getElementById('name').style.textAlign = 'center';
+                document.getElementById('description').style.textAlign = 'justify';
+                document.querySelectorAll('h3').forEach(el => el.style.textAlign = 'right');
+                document.querySelectorAll('p').forEach(el => el.style.textAlign = 'justify');
+                document.querySelectorAll('ul').forEach(el => el.style.textAlign = 'right');
+
+            } else {
+                document.documentElement.dir = 'ltr';
+
+                document.querySelector('.container').style.textAlign = 'left';
+                document.getElementById('name').style.textAlign = 'left';
+                document.getElementById('description').style.textAlign = 'left';
+                document.querySelectorAll('h3').forEach(el => el.style.textAlign = 'left');
+                document.querySelectorAll('p').forEach(el => el.style.textAlign = 'left');
+                document.querySelectorAll('ul').forEach(el => el.style.textAlign = 'left');
+            }
+
+            const data = content[lang];
+
+            btn.textContent = data.langBtn;
+            document.getElementById('name').textContent = data.name;
+            document.getElementById('description').textContent = data.description;
+            document.getElementById('edu-title').textContent = data.eduTitle;
+
+            const eduList = document.getElementById('edu-list');
+            eduList.innerHTML = '';
+            data.eduList.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                eduList.appendChild(li);
+            });
+
+            document.getElementById('exp-title').textContent = data.expTitle;
+            const expList = document.getElementById('exp-list');
+            expList.innerHTML = '';
+            data.expList.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                expList.appendChild(li);
+            });
+
+            document.getElementById('ach-title').textContent = data.achTitle;
+            const achList = document.getElementById('ach-list');
+            achList.innerHTML = '';
+            data.achList.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                achList.appendChild(li);
+            });
+
+            document.getElementById('skills-title').textContent = data.skillsTitle;
+            const skillsList = document.getElementById('skills-list');
+            skillsList.innerHTML = '';
+            data.skillsList.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                skillsList.appendChild(li);
+            });
+
+            document.getElementById('back-btn').textContent = data.backBtn;
+        }
+
+        btn.addEventListener('click', () => {
+            const currentLang = document.documentElement.lang;
+            if(currentLang === 'ar') {
+                updateContent('en');
+            } else {
+                updateContent('ar');
+            }
+        });
+
+        // بدء بتحميل المحتوى العربي
+        updateContent(document.documentElement.lang || 'ar');
+    </script>
 </body>
 </html>

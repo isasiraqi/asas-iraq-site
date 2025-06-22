@@ -1,92 +1,100 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <title>ائتلاف الأساس العراقي</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            background-color: #004d4d;
-        }
-        /* شريط التحديث العلوي */
-        #update-banner {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(90deg, #009688, #4caf50);
-            color: white;
-            text-align: center;
-            padding: 12px 0;
-            font-size: 18px;
-            font-weight: bold;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            opacity: 0;
-            animation: fadeInBanner 1.5s forwards;
-            z-index: 9999;
-        }
-        @keyframes fadeInBanner {
-            to { opacity: 1; }
-        }
-
-        .container {
-            position: relative;
-            max-width: 768px;
-            margin: 80px auto 0; /* margin top to avoid banner overlap */
-        }
-        .main-image {
-            width: 100%;
-            display: block;
-        }
-        /* مناطق تفاعل أيقونات التواصل بدقة حسب الصورة */
-        .social-icon {
-            position: absolute;
-            width: 9%;
-            aspect-ratio: 1 / 1;
-            background-color: transparent;
-            cursor: pointer;
-            border-radius: 50%;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .social-icon:hover {
-            box-shadow: 0 0 10px 5px rgba(255,255,255,0.4);
-            transform: scale(1.2);
-        }
-        /* تحديد المواقع بدقة حسب الصورة */
-        #facebook { top: 85%; left: 15%; }
-        #x { top: 85%; left: 35%; }
-        #instagram { top: 85%; left: 55%; }
-        #tiktok { top: 85%; left: 75%; }
-        /* تفعيل زر السيرة الذاتية حسب الرسم الموجود بالصورة */
-        .cv-button {
-            position: absolute;
-            top: 67%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40%;
-            height: 6%;
-            background-color: transparent;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>ائتلاف الأساس العراقي</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #004d4d;
+    }
+    /* شريط التحديث العلوي */
+    #update-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #009688, #4caf50);
+      color: white;
+      text-align: center;
+      padding: 12px 0;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+    .container {
+      position: relative;
+      max-width: 768px;
+      margin: 80px auto 0; /* لتجنب تراكب الشريط */
+    }
+    .main-image {
+      width: 100%;
+      display: block;
+    }
+    /* مناطق تفاعل أيقونات التواصل بدقة حسب الصورة */
+    .social-icon {
+      position: absolute;
+      width: 9%;
+      aspect-ratio: 1 / 1;
+      background-color: transparent;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .social-icon:hover {
+      box-shadow: 0 0 10px 5px rgba(255,255,255,0.4);
+      transform: scale(1.2);
+    }
+    /* تحديد المواقع بدقة حسب الصورة */
+    #facebook { top: 85%; left: 15%; }
+    #x { top: 85%; left: 35%; }
+    #instagram { top: 85%; left: 55%; }
+    #tiktok { top: 85%; left: 75%; }
+    /* تفعيل زر السيرة الذاتية حسب الرسم الموجود بالصورة */
+    .cv-button {
+      position: absolute;
+      top: 67%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40%;
+      height: 6%;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <!-- شريط إعلام التحديث -->
-    <div id="update-banner">تم تحديث الموقع بنجاح!</div>
+  <!-- شريط إعلام التحديث -->
+  <div id="update-banner">تم تحديث الموقع بنجاح!</div>
 
-    <div class="container">
-        <img src="main image.jpeg" alt="ائتلاف الأساس العراقي" class="main-image" />
-        <!-- تفعيل زر السيرة الذاتية -->
-        <a href="cv.html" class="cv-button" title="السيرة الذاتية"></a>
-        <!-- تفعيل أيقونات مواقع التواصل بدقة -->
-        <a id="facebook" class="social-icon" href="https://facebook.com/people/ائتلاف-الأساس-العراقي/61575067951431/" target="_blank" rel="noopener noreferrer"></a>
-        <a id="x" class="social-icon" href="https://twitter.com" target="_blank" rel="noopener noreferrer"></a>
-        <a id="instagram" class="social-icon" href="https://www.instagram.com/isas.iraqi_formal_page?igsh=dnlnZWZ0ZjZ0Y2k2&utm_source=qr" target="_blank" rel="noopener noreferrer"></a>
-        <a id="tiktok" class="social-icon" href="https://www.tiktok.com/@iraqiisas2025?_t=ZS-8xJRhtigRmr&_r=1" target="_blank" rel="noopener noreferrer"></a>
-    </div>
+  <div class="container">
+    <img src="main image.jpeg" alt="ائتلاف الأساس العراقي" class="main-image" />
+    <!-- تفعيل زر السيرة الذاتية -->
+    <a href="cv.html" class="cv-button" title="السيرة الذاتية"></a>
+    <!-- تفعيل أيقونات مواقع التواصل بدقة -->
+    <a id="facebook" class="social-icon" href="https://facebook.com/people/ائتلاف-الأساس-العراقي/61575067951431/" target="_blank" rel="noopener noreferrer"></a>
+    <a id="x" class="social-icon" href="https://twitter.com" target="_blank" rel="noopener noreferrer"></a>
+    <a id="instagram" class="social-icon" href="https://www.instagram.com/isas.iraqi_formal_page?igsh=dnlnZWZ0ZjZ0Y2k2&utm_source=qr" target="_blank" rel="noopener noreferrer"></a>
+    <a id="tiktok" class="social-icon" href="https://www.tiktok.com/@iraqiisas2025?_t=ZS-8xJRhtigRmr&_r=1" target="_blank" rel="noopener noreferrer"></a>
+  </div>
+
+  <script>
+    // بعد 3 ثواني، يخفي الشريط تدريجياً
+    setTimeout(() => {
+      const banner = document.getElementById('update-banner');
+      banner.style.opacity = '0';
+      // ثم يخفيه من العرض بعد انتهاء الحركة
+      setTimeout(() => {
+        banner.style.display = 'none';
+      }, 1000); // 1000ms = مدة انتقال opacity
+    }, 3000); // 3000ms = مدة بقاء الشريط ظاهر
+  </script>
 </body>
 </html>

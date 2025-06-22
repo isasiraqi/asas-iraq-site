@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>ائتلاف الأساس العراقي</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <style>
         html, body {
-            margin: 0; padding: 0; height: 100%; width: 100%;
-            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
             background-color: #004d4d;
-            overflow-x: hidden;
+            font-family: Arial, sans-serif;
         }
         .container {
             position: relative;
-            width: 100vw;       /* ملء عرض الشاشة */
-            max-width: 450px;   /* أقصى عرض مناسب للعرض المحمول */
-            aspect-ratio: 9 / 16; /* نسبة العرض إلى الارتفاع */
-            margin: auto;
-            user-select: none;
-        }
-        .main-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;  /* تغطية كاملة مع قص حسب الحاجة */
-            display: block;
         }
+        .main-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .social-icon {
             position: absolute;
             width: 9%;
-            aspect-ratio: 1 / 1;
+            aspect-ratio: 1/1;
             background-color: transparent;
             cursor: pointer;
             border-radius: 50%;
@@ -36,13 +36,16 @@
         }
         .social-icon:hover {
             box-shadow: 0 0 10px 5px rgba(255,255,255,0.4);
-            transform: scale(1.2);
+            transform: scale(1.15);
         }
-        /* مواقع الأيقونات بنسب مئوية تتناسب مع العرض */
-        #facebook { top: 85%; left: 16%; }
-        #x        { top: 85%; left: 37%; }
-        #instagram{ top: 85%; left: 58%; }
-        #tiktok   { top: 85%; left: 78%; }
+
+        /* ضبط أماكن الأزرار بدقة حسب أبعاد 900x1600 */
+        #facebook { top: 85%; left: 15%; }
+        #x { top: 85%; left: 35%; }
+        #instagram { top: 85%; left: 55%; }
+        #tiktok { top: 85%; left: 75%; }
+
+        /* زر السيرة الذاتية */
         .cv-button {
             position: absolute;
             top: 67%;
@@ -53,18 +56,48 @@
             background-color: transparent;
             cursor: pointer;
         }
+
+        /* نص تنبيهي للمستخدمين على الجوال */
+        .note {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 6px;
+            z-index: 999;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="main image.jpeg" alt="ائتلاف الأساس العراقي" class="main-image" draggable="false" />
 
-        <a href="cv.html" class="cv-button" title="السيرة الذاتية"></a>
+<div class="container">
+    <img src="main image.jpeg" alt="ائتلاف الأساس العراقي" class="main-image">
 
-        <a id="facebook" class="social-icon" href="https://www.facebook.com/share/14G1Z7ArH2y/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"></a>
-        <a id="x" class="social-icon" href="https://twitter.com" target="_blank" rel="noopener noreferrer"></a>
-        <a id="instagram" class="social-icon" href="https://www.instagram.com/isas.iraqi_formal_page?igsh=dnlnZWZ0ZjZ0Y2k2&utm_source=qr" target="_blank" rel="noopener noreferrer"></a>
-        <a id="tiktok" class="social-icon" href="https://www.tiktok.com/@iraqiisas2025?_t=ZS-8xJRhtigRmr&_r=1" target="_blank" rel="noopener noreferrer"></a>
-    </div>
+    <!-- زر السيرة الذاتية -->
+    <a href="cv.html" class="cv-button" title="السيرة الذاتية"></a>
+
+    <!-- أيقونات التواصل -->
+    <a id="facebook" class="social-icon" 
+       href="https://web.facebook.com/people/%D8%A7%D8%A6%D8%AA%D9%84%D8%A7%D9%81-%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3-%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82%D9%8A/61575067951431/" 
+       target="_blank" rel="noopener noreferrer"></a>
+
+    <a id="x" class="social-icon" href="https://twitter.com" target="_blank" rel="noopener noreferrer"></a>
+
+    <a id="instagram" class="social-icon" 
+       href="https://www.instagram.com/isas.iraqi_formal_page?igsh=dnlnZWZ0ZjZ0Y2k2&utm_source=qr" 
+       target="_blank" rel="noopener noreferrer"></a>
+
+    <a id="tiktok" class="social-icon" 
+       href="https://www.tiktok.com/@iraqiisas2025?_t=ZS-8xJRhtigRmr&_r=1" 
+       target="_blank" rel="noopener noreferrer"></a>
+</div>
+
+<div class="note">
+يرجى في أجهزة الأندرويد فتح الروابط في المتصفح الخارجي إذا لم تعمل بشكل مباشر.
+</div>
+
 </body>
 </html>

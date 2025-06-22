@@ -5,29 +5,29 @@
     <title>ائتلاف الأساس العراقي</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
+        html, body {
+            margin: 0; padding: 0; height: 100%; width: 100%;
             font-family: Arial, sans-serif;
             background-color: #004d4d;
+            overflow-x: hidden;
         }
         .container {
             position: relative;
-            width: 360px;  /* نسبة مصغرة من 900px */
-            height: 640px; /* نسبة مصغرة من 1600px */
+            width: 100vw;       /* ملء عرض الشاشة */
+            max-width: 450px;   /* أقصى عرض مناسب للعرض المحمول */
+            aspect-ratio: 9 / 16; /* نسبة العرض إلى الارتفاع */
             margin: auto;
+            user-select: none;
         }
         .main-image {
             width: 100%;
             height: 100%;
+            object-fit: cover;  /* تغطية كاملة مع قص حسب الحاجة */
             display: block;
-            object-fit: cover;
         }
-        /* أيقونات التواصل */
         .social-icon {
             position: absolute;
-            width: 8.5%;
+            width: 9%;
             aspect-ratio: 1 / 1;
             background-color: transparent;
             cursor: pointer;
@@ -38,13 +38,11 @@
             box-shadow: 0 0 10px 5px rgba(255,255,255,0.4);
             transform: scale(1.2);
         }
-        /* مواقع الأيقونات */
-        #facebook { top: 85%; left: 17%; }
+        /* مواقع الأيقونات بنسب مئوية تتناسب مع العرض */
+        #facebook { top: 85%; left: 16%; }
         #x        { top: 85%; left: 37%; }
-        #instagram { top: 85%; left: 57%; }
-        #tiktok    { top: 85%; left: 77%; }
-
-        /* زر السيرة الذاتية */
+        #instagram{ top: 85%; left: 58%; }
+        #tiktok   { top: 85%; left: 78%; }
         .cv-button {
             position: absolute;
             top: 67%;
@@ -59,12 +57,10 @@
 </head>
 <body>
     <div class="container">
-        <img src="main image.jpeg" alt="ائتلاف الأساس العراقي" class="main-image" />
-        
-        <!-- زر السيرة الذاتية -->
+        <img src="main image.jpeg" alt="ائتلاف الأساس العراقي" class="main-image" draggable="false" />
+
         <a href="cv.html" class="cv-button" title="السيرة الذاتية"></a>
-        
-        <!-- أيقونات التواصل -->
+
         <a id="facebook" class="social-icon" href="https://www.facebook.com/share/14G1Z7ArH2y/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"></a>
         <a id="x" class="social-icon" href="https://twitter.com" target="_blank" rel="noopener noreferrer"></a>
         <a id="instagram" class="social-icon" href="https://www.instagram.com/isas.iraqi_formal_page?igsh=dnlnZWZ0ZjZ0Y2k2&utm_source=qr" target="_blank" rel="noopener noreferrer"></a>

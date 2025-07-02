@@ -1,60 +1,70 @@
-/* file: style.css */
-
-body, html {
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #004d4d;
-  color: #fff;
+  box-sizing: border-box;
+}
+
+html, body {
   height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #004d4d;
+  overflow: hidden;
+}
+
+body {
+  position: relative;
 }
 
 .container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
+  position: relative;
+  height: 100vh;
+  height: 100dvh; /* دعم أفضل لأندرويد */
+  width: 100vw;
 }
 
-h1, h2, h3 {
-  text-align: center;
-  margin-bottom: 20px;
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
 }
 
-a.button {
-  display: inline-block;
-  padding: 15px 40px;
-  border-radius: 30px;
-  background: linear-gradient(135deg, #ffffffcc, #eeeeeecc);
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-  border: 2px solid #333;
-  transition: 0.4s;
+.social-icon {
+  position: absolute;
+  width: 9vw;
+  max-width: 70px;
+  aspect-ratio: 1 / 1;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
 }
 
-a.button:hover {
-  background: linear-gradient(135deg, #ffffff, #dddddd);
-  transform: scale(1.05);
+.social-icon:hover,
+.social-icon:focus {
+  box-shadow: 0 0 15px 6px rgba(255, 255, 255, 0.6);
+  transform: scale(1.25);
+  outline: none;
 }
 
-.navbar {
-  text-align: center;
-  padding: 10px 0;
-  background-color: #003838;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+/* أماكن الأيقونات */
+#facebook { top: 83%; left: 15%; }
+#x { top: 83%; left: 35%; }
+#instagram { top: 83%; left: 55%; }
+#tiktok { top: 83%; left: 75%; }
 
-.navbar a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.3s;
-}
-
-.navbar a:hover {
-  color: #ffc107;
+.cv-button {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40vw;
+  max-width: 320px;
+  height: 6vh;
+  cursor: pointer;
+  background-color: transparent;
+  user-select: none;
 }

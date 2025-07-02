@@ -10,10 +10,14 @@ html, body {
   font-family: Arial, sans-serif;
   background-color: #004d4d;
   overflow: hidden;
+  
 }
+
 
 body {
   position: relative;
+  touch-action: manipulation;
+  overscroll-behavior: none;
 }
 
 .container {
@@ -68,3 +72,4 @@ body {
   background-color: transparent;
   user-select: none;
 }
+

@@ -1,8 +1,8 @@
 const links = {
-  facebook: 'https://web.facebook.com/people/...',
+  facebook: 'https://web.facebook.com/people/%D8%A7%D8%A6%D8%AA%D9%84%D8%A7%D9%81-%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3-%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82%D9%8A/61575067951431/',
   x: 'https://twitter.com',
-  instagram: 'https://www.instagram.com/...',
-  tiktok: 'https://www.tiktok.com/@iraqiisas2025?...'
+  instagram: 'https://www.instagram.com/isas.iraqi_formal_page?igsh=dnlnZWZ0ZjZ0Y2k2&utm_source=qr',
+  tiktok: 'https://www.tiktok.com/@iraqiisas2025?_t=ZS-8xJRhtigRmr&_r=1'
 };
 
 function openLink(url) {
@@ -18,7 +18,7 @@ function openLink(url) {
     el.addEventListener('click', e => {
       e.preventDefault();
       openLink(links[id]);
-      el.blur();
+      el.blur(); // لإزالة التركيز بعد الضغط
     });
 
     el.addEventListener('keydown', e => {

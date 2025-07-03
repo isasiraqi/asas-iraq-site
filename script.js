@@ -18,14 +18,14 @@ function openLink(url) {
     el.addEventListener('click', e => {
       e.preventDefault();
       openLink(links[id]);
-      el.blur(); // حل الفقاعة
+      el.blur();
     });
 
     el.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         openLink(links[id]);
-        el.blur(); // حل الفقاعة
+        el.blur();
       }
     });
   }

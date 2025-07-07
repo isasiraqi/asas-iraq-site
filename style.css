@@ -8,70 +8,56 @@ html, body {
   height: 100%;
   width: 100%;
   font-family: Arial, sans-serif;
-  background-color: #004d4d;
-  overflow: hidden;
+  overflow-x: hidden;
+  background: #066666; /* لون قريب من الخلفية العامة لصورتك */
 }
 
-body {
-  position: relative;
-  touch-action: manipulation;
-  overscroll-behavior: none;
-}
 
 .container {
   position: relative;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+  width: 100%;
+  max-width: 768px;
+  margin: auto;
 }
 
 .main-image {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
   display: block;
-  z-index: 1;
 }
 
-.social-icon {
-  position: absolute;
-  width: 9vw;
-  max-width: 70px;
-  aspect-ratio: 1 / 1;
-  background-color: transparent;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  user-select: none;
-  z-index: 2;
-}
-
-.social-icon:hover,
-.social-icon:focus {
-  box-shadow: 0 0 15px 6px rgba(255, 255, 255, 0.6);
-  transform: scale(1.25);
-  outline: none;
-}
-
-#facebook { top: 83%; left: 15%; }
-#x { top: 83%; left: 35%; }
-#instagram { top: 83%; left: 55%; }
-#tiktok { top: 83%; left: 75%; }
-
+/* زر السيرة الذاتية */
 .cv-button {
   position: absolute;
-  top: 65%;
+  top: 67%; /* مكان زر السيرة */
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40vw;
-  max-width: 320px;
-  height: 6vh;
-  cursor: pointer;
-  background-color: transparent;
-  user-select: none;
-  z-index: 2;
+  width: 45%;
+  aspect-ratio: 3 / 1;
+  background: rgba(0,0,0,0);
+}
+
+/* أيقونات التواصل */
+.social-icon {
+  position: absolute;
+  width: 12%;
+  aspect-ratio: 1 / 1;
+  background: rgba(0,0,0,0); /* شفاف للضغط */
+}
+
+/* ترتيبها بدقة فوق الأيقونات */
+#facebook {
+  bottom: 6%;
+  left: 15%;
+}
+#x {
+  bottom: 6%;
+  left: 35%;
+}
+#instagram {
+  bottom: 6%;
+  left: 55%;
+}
+#tiktok {
+  bottom: 6%;
+  left: 75%;
 }

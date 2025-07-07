@@ -1,32 +1,21 @@
-const links = {
-  facebook: 'https://web.facebook.com/people/%D8%A7%D8%A6%D8%AA%D9%84%D8%A7%D9%81-%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3-%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82%D9%8A/61575067951431/',
-  x: 'https://twitter.com',
-  instagram: 'https://www.instagram.com/isas.iraqi_formal_page?igsh=dnlnZWZ0ZjZ0Y2k2&utm_source=qr',
-  tiktok: 'https://www.tiktok.com/@iraqiisas2025?_t=ZS-8xJRhtigRmr&_r=1'
-};
-
-function openLink(url) {
-  const newWin = window.open(url, '_blank', 'noopener,noreferrer');
-  if (!newWin) {
-    window.location.href = url;
-  }
-}
-
-['facebook', 'x', 'instagram', 'tiktok'].forEach(id => {
-  const el = document.getElementById(id);
-  if (el) {
-    el.addEventListener('click', e => {
-      e.preventDefault();
-      openLink(links[id]);
-      el.blur(); // لإزالة التركيز بعد الضغط
-    });
-
-    el.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openLink(links[id]);
-        el.blur();
-      }
-    });
-  }
+document.querySelectorAll('.social-icon').forEach(icon => {
+  icon.addEventListener('click', function(event) {
+    event.preventDefault();
+    let url = "#";
+    switch(this.id) {
+      case "facebook":
+        url = "https://www.facebook.com/share/14G1Z7ArH2y/?mibextid=wwXIfr";
+        break;
+      case "instagram":
+        url = "https://www.instagram.com/isas.iraqi_formal_page?igsh=dnlnZWZ0ZjZ0Y2k2&utm_source=qr";
+        break;
+      case "tiktok":
+        url = "https://www.tiktok.com/@iraqiisas2025?_t=ZS-8xJRhtigRmr&_r=1";
+        break;
+      case "x":
+        url = "#"; // ضع هنا رابط تويتر متى ما أعطيتني إياه
+        break;
+    }
+    window.open(url, '_blank');
+  });
 });

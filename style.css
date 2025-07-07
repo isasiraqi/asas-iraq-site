@@ -3,61 +3,39 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 html, body {
   height: 100%;
   width: 100%;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
-  background: #066666; /* لون قريب من الخلفية العامة لصورتك */
+  background: #066666;
 }
-
-
 .container {
   position: relative;
   width: 100%;
   max-width: 768px;
   margin: auto;
 }
-
 .main-image {
   width: 100%;
   display: block;
 }
-
-/* زر السيرة الذاتية */
 .cv-button {
   position: absolute;
-  top: 67%; /* مكان زر السيرة */
+  top: 67%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 45%;
   aspect-ratio: 3 / 1;
   background: rgba(0,0,0,0);
 }
-
-/* أيقونات التواصل */
 .social-icon {
   position: absolute;
   width: 12%;
   aspect-ratio: 1 / 1;
-  background: rgba(0,0,0,0); /* شفاف للضغط */
+  background: rgba(0,0,0,0);
 }
-
-/* ترتيبها بدقة فوق الأيقونات */
-#facebook {
-  bottom: 6%;
-  left: 15%;
-}
-#x {
-  bottom: 6%;
-  left: 35%;
-}
-#instagram {
-  bottom: 6%;
-  left: 55%;
-}
-#tiktok {
-  bottom: 6%;
-  left: 75%;
-}
+#facebook { bottom: 6%; left: 15%; }
+#x { bottom: 6%; left: 35%; }
+#instagram { bottom: 6%; left: 55%; }
+#tiktok { bottom: 6%; left: 75%; }

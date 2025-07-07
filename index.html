@@ -4,38 +4,104 @@
   <meta charset="UTF-8" />
   <title>ائتلاف الأساس العراقي</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; width: 100%; font-family: Arial, sans-serif; overflow-x: hidden; background: #066666; }
+    .container { position: relative; width: 100%; max-width: 768px; margin: auto; }
+    .main-image { width: 100%; display: block; }
+    .cv-button {
+      position: absolute;
+      top: 67%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 45%;
+      aspect-ratio: 3 / 1;
+      background: rgba(0,0,0,0);
+    }
+    .social-icon {
+      position: absolute;
+      width: 12%;
+      aspect-ratio: 1 / 1;
+      background: rgba(0,0,0,0);
+    }
+    #facebook { bottom: 6%; left: 15%; }
+    #x { bottom: 6%; left: 35%; }
+    #instagram { bottom: 6%; left: 55%; }
+    #tiktok { bottom: 6%; left: 75%; }
+
+    /* تنبيه فتح في المتصفح */
+    #externalPrompt {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #004d4d;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      z-index: 9999;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    #externalPrompt button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 15px;
+      background: #ff9900;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
   <div class="container">
     <img src="main image.jpeg" alt="ائتلاف الأساس العراقي" class="main-image" draggable="false" />
-
-    <!-- زر السيرة الذاتية -->
     <a href="cv.html" class="cv-button" title="السيرة الذاتية" aria-label="السيرة الذاتية"></a>
-
-    <!-- أيقونات التواصل -->
     <a id="facebook" class="social-icon"
        href="https://www.facebook.com/share/14G1Z7ArH2y/?mibextid=wwXIfr"
        onclick="forceOpen(event, this.href)"
        aria-label="Facebook"></a>
-
     <a id="instagram" class="social-icon"
        href="https://www.instagram.com/isas.iraqi_formal_page?igsh=dnlnZWZ0ZjZ0Y2k2&utm_source=qr"
        onclick="forceOpen(event, this.href)"
        aria-label="Instagram"></a>
-
     <a id="tiktok" class="social-icon"
        href="https://www.tiktok.com/@iraqiisas2025?_t=ZS-8xJRhtigRmr&_r=1"
        onclick="forceOpen(event, this.href)"
        aria-label="TikTok"></a>
-
     <a id="x" class="social-icon"
        href="#"
        onclick="forceOpen(event, this.href)"
        aria-label="Twitter"></a>
   </div>
 
-  <script src="script.js"></script>
+  <div id="externalPrompt">
+    ⚠ لتجربة أفضل اضغط لفتح الموقع في متصفحك الخارجي
+    <br>
+    <button onclick="openInBrowser()">فتح في المتصفح</button>
+  </div>
+
+  <script>
+    // كشف إن كان داخل Facebook أو Instagram
+    if (navigator.userAgent.includes("FBAN") || navigator.userAgent.includes("FBAV") || navigator.userAgent.includes("Instagram")) {
+      document.getElementById("externalPrompt").style.display = "block";
+    }
+
+    // زر الفتح في المتصفح
+    function openInBrowser() {
+      window.location = window.location.href;
+    }
+
+    // اجبار فتح الروابط حتى لو داخل webview
+    function forceOpen(event, url) {
+      event.preventDefault();
+      window.location = url;
+    }
+  </script>
+
 </body>
 </html>
